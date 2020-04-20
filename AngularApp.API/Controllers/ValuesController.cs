@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace DatingApp.API.Controllers
+namespace AngularApp.API.Controllers
 {
     [Authorize]
     [Route("api/[controller]")]
@@ -21,6 +21,7 @@ namespace DatingApp.API.Controllers
 
         }
 
+        [AllowAnonymous]
         // GET api/values
         [HttpGet]
         public async Task<IActionResult> GetValues()
