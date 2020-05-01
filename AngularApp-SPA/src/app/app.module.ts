@@ -4,6 +4,7 @@ import { HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -11,6 +12,11 @@ import { AuthService } from './_services/auth.service';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
+import { MovieListComponent } from './movie-list/movie-list.component';
+import { AddMovieComponent } from './add-movie/add-movie.component';
+import { AboutComponent } from './about/about.component';
+import { appRoutes } from './routes';
+
 
 
 @NgModule({
@@ -18,14 +24,18 @@ import { ErrorInterceptorProvider } from './_services/error.interceptor';
       AppComponent,
       NavComponent,
       HomeComponent,
-      RegisterComponent
+      RegisterComponent,
+      MovieListComponent,
+      AddMovieComponent,
+      AboutComponent
    ],
    imports: [
       BrowserModule,
       HttpClientModule,
       FormsModule,
       BrowserAnimationsModule,
-      BsDropdownModule.forRoot()
+      BsDropdownModule.forRoot(),
+      RouterModule.forRoot(appRoutes)
    ],
    providers: [
       AuthService,
